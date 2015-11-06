@@ -1,0 +1,75 @@
+﻿@model BlowOut.Models.Instrument
+
+
+@{
+    ViewBag.Title = "Instrument Rental";
+    ViewBag.Condition = "Used";
+    
+    if (ViewBag.InstrumentName == "Tuba")
+    { 
+        ViewBag.pixel = "150px"; 
+    }
+    else 
+    {
+        ViewBag.pixel = "300px";
+    }
+}
+
+ <div>
+    <div class="center">
+        <p><h1>@ViewBag.InstrumentName</h1></p>
+        <div>
+            <img src="~/Content/images/@(ViewBag.InstrumentName).jpg" alt="@(ViewBag.InstrumentName)" style="width:300px;height:150px" />
+        </div>
+        <div>
+            <div class="center">
+                <h2>Rent <strong>New</strong> or <strong>Used</strong>.</h2>    
+                <br />
+                <br />
+                <div>
+                    <button type="button" class="btn btn-lg" onclick="NewPrice()">New</button>
+                    <button type="button" class="btn btn-lg" onclick="UsedPrice()">Used</button>
+                </div>
+
+                <h3 id="new" class="hidden">Rent for @ViewBag.NewPrice</h3>
+                <button id="newbtn" type="button" class="btn btn-info btn-lg hidden" onclick="location.href='@Url.Action("Create", "Clients", new { name = (string)ViewBag.InstrumentName, price = (string)ViewBag.NewPrice })'">Rent this <strong>New</strong> @ViewBag.InstrumentName</button>
+                <h3 id="used" class="hidden">Rent for @ViewBag.UsedPrice</h3>
+                <button id="usedbtn" type="button" class="btn btn-info btn-lg hidden" onclick="location.href='@Url.Action("Create", "Clients", new { name = (string)ViewBag.InstrumentName, price = (string)ViewBag.UsedPrice })'">Rent this <strong>Used</strong> @ViewBag.InstrumentName</button>
+                <div class="space"></div>
+                <p id="message" class="text-primary hidden">
+                    After 18 months leasing the instrument is yours to keep! 
+                    <br /> 
+                    If the instrument is returned at any time before the 3 months, there will be a $200 re-stocking fee.
+                    If the instrument is returned after 3 months, the renter forfeits any equity in the instrument.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function NewPrice() {
+
+        if (jQuery('#used').hasClass('visible')) {
+            $('#used').addClass('hidden');
+            $('#usedbtn').addClass('hidden');
+        }
+
+        jQuery('#new').removeClass('hidden').addClass('visible');
+        $('#message').removeClass('hidden');
+        $('#newbtn').removeClass('hidden');
+    }
+
+    function UsedPrice() {
+
+        if (jQuery('#new').hasClass('visible')) {
+            $('#new').addClass('hidden');
+            $('#newbtn').addClass('hidden');
+        }
+
+        jQuery('#used').removeClass('hidden').addClass('visible');
+        $('#message').removeClass('hidden');
+        $('#usedbtn').removeClass('hidden');
+    }
+</script>

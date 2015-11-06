@@ -1,0 +1,74 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.sheetmusic {
+height: 300px;
+width: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+.rental {
+    width: 620px;
+}
+
+.rent {
+    font-weight: bold;
+    text-align: center;
+}
+
+.space {
+    height: 20px;
+}
+
+.InstaHead {
+    color: darkslateblue;
+    font-weight: 600;
+    font-size: 18px;
+
+}
+
+.title {
+    color: darkslateblue;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.ron {
+    display: block;
+    float: none;
+}
+
+.gray {
+    background-color: lightgray;
+    padding: 30px;
+}
+
+.client {
+    font-size: 30px;
+    font-weight: 700;
+}

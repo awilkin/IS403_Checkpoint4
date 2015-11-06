@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Rentals";
+}
+
+
+<div> 
+    <h1 class="rent">Rent new or used instruments.</h1>
+    <div class="row">
+
+        <div class="col-sm-6">
+            <a href='@Url.Action("Instrument", "Home", new { name = "Trumpet", condition = "New" })' class="thumbnail">
+                <p>Trumpet</p>
+                <img src="~/Content/images/trumpet.jpg" alt="trumpet" style="width:300px;height:150px" />
+            </a>
+        </div>
+
+
+        <div class="col-sm-6">
+            <a href='@Url.Action("Instrument", "Home", new { name = "Trombone", condition = "New" })' class="thumbnail">
+                <p>Trombone</p>
+                <img src="~/Content/images/trombone.JPG" alt="trombone" style="width:300px;height:150px" />
+            </a>
+        </div>
+
+        <div class="col-sm-6">
+            <a href='@Url.Action("Instrument", "Home", new {name = "Tuba", condition = "New"})' class="thumbnail">
+                <p>Tuba</p>
+                <img src="~/Content/images/tuba.jpg" alt="tuba" style="width:300px;height:150px" />
+            </a>
+        </div>
+
+        <div class="col-sm-6">
+            <a href='@Url.Action("Instrument", "Home", new { name = "Flute", condition = "New" })' class="thumbnail">
+                <p>Flute</p>
+                <img src="~/Content/images/flute.jpg" alt="Flute" style="width:300px;height:150px" />
+            </a>
+        </div>
+
+        <div class="col-sm-6">
+            <a href='@Url.Action("Instrument", "Home", new { name = "Clarinet", condition = "New" })' class="thumbnail">
+                <p>Clarinet</p>
+                <img src="~/Content/images/clarinet.jpg" alt="clarinet" style="width:300px;height:150px" />
+            </a>
+        </div>
+
+        <div class="col-sm-6">
+            <a href='@Url.Action("Instrument", "Home", new { name = "Saxophone", condition = "New" })' class="thumbnail">
+                <p>Saxophone</p>
+                <img src="~/Content/images/saxophone.jpg" alt="Saxophone" style="width:300px;height:150px" />
+            </a>
+        </div>
+    </div>
+</div>
